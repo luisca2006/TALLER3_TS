@@ -1,7 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.SERIES = void 0;
-exports.SERIES = [
+var SERIES = [
     {
         id: 1,
         name: 'Breaking Bad',

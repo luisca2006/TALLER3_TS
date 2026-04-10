@@ -1,25 +1,19 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const data_1 = require("./data");
-const tbody = document.getElementById('seriesBody');
-const avgRow = document.getElementById('avgRow');
-function renderTable(selectedId = null) {
+var tbody = document.getElementById('seriesBody');
+var avgRow = document.getElementById('avgRow');
+function renderTable(selectedId) {
+    if (selectedId === void 0) { selectedId = null; }
     tbody.innerHTML = '';
-    data_1.SERIES.forEach((s) => {
-        const tr = document.createElement('tr');
+    SERIES.forEach(function (s) {
+        var tr = document.createElement('tr');
         if (s.id === selectedId)
             tr.classList.add('table-active');
-        tr.innerHTML = `
-      <td>${s.id}</td>
-      <td><a href="#">${s.name}</a></td>
-      <td>${s.channel}</td>
-      <td>${s.seasons}</td>
-    `;
+        tr.innerHTML = "\n      <td>".concat(s.id, "</td>\n      <td><a href=\"#\">").concat(s.name, "</a></td>\n      <td>").concat(s.channel, "</td>\n      <td>").concat(s.seasons, "</td>\n    ");
         tr.style.cursor = 'pointer';
-        tr.addEventListener('click', () => showDetail(s));
+        tr.addEventListener('click', function () { return showDetail(s); });
         tbody.appendChild(tr);
     });
-    const avg = data_1.SERIES.reduce((sum, s) => sum + s.seasons, 0) / data_1.SERIES.length;
+    var avg = SERIES.reduce(function (sum, s) { return sum + s.seasons; }, 0) / SERIES.length;
     avgRow.textContent = 'Seasons average: ' + Math.round(avg);
 }
 function showDetail(serie) {
@@ -27,7 +21,7 @@ function showDetail(serie) {
     document.getElementById('cardImg').src = serie.image;
     document.getElementById('cardTitle').textContent = serie.name;
     document.getElementById('cardDesc').textContent = serie.description;
-    const link = document.getElementById('cardLink');
+    var link = document.getElementById('cardLink');
     link.href = serie.url;
     link.textContent = serie.url;
     renderTable(serie.id);
