@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TV Series</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="p-4">
+
+  <div class="card">
+    <div class="card-header bg-info text-white">
+      📺 TV Series
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-7">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Channel</th>
+                <th>Seasons</th>
+              </tr>
+            </thead>
+            <tbody id="seriesBody"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4" id="avgRow"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="col-md-5" id="detailSection" style="display:none">
+          <div class="card">
+            <img id="cardImg" class="card-img-top" src="" alt="">
+            <div class="card-body">
+              <h5 class="card-title" id="cardTitle"></h5>
+              <p class="card-text" id="cardDesc"></p>
+              <a id="cardLink" href="#" target="_blank" class="card-link"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
