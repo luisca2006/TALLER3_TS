@@ -1,6 +1,3 @@
-import { SERIES } from './data';
-import { Serie } from './serie';
-
 const tbody = document.getElementById('seriesBody') as HTMLElement;
 const avgRow = document.getElementById('avgRow') as HTMLElement;
 

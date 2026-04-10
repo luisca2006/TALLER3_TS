@@ -1,4 +1,4 @@
-export class Serie {
+class Serie {
   id: number;
   name: string;
   channel: string;
